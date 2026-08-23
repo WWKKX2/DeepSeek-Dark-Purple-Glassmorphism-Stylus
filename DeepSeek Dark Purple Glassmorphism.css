@@ -1,0 +1,205 @@
+/* ==UserStyle==
+@name           Deepseek-Matugen
+@namespace      github.com/NullCipherr/DeepSeek/Deepseek-Matugen
+@version        0.0.1
+@description    A minimal, purple-themed UserStyle for DeepSeek chat, inspired by glassmorphism and liquid glass aesthetics, featuring an 8-bit animated GIF background for a retro vibe.
+@author         NullCipherr
+@homepageURL    https://github.com/NullCipherr/DeepSeek/Deepseek-Matugen
+@license        MIT
+@preprocessor   stylus
+==/UserStyle== */
+
+@-moz-document domain("chat.deepseek.com") {
+/* === Root Variables === */
+:root {
+    /* Primary Colors */
+    --main-color: rgba(138, 85, 154, 1);
+    /* Solid purple */
+    --main-color-15: rgba(138, 85, 154, 0.15);
+    /* 15% opacity */
+    --main-color-35: rgba(138, 85, 154, 0.35);
+    /* 35% opacity */
+    --main-color-50: rgba(138, 85, 154, 0.50);
+    /* 50% opacity */
+    --main-color-60: rgba(138, 85, 154, 0.60);
+    /* 60% opacity */
+    --main-color-70: rgba(138, 85, 154, 0.70);
+    /* 70% opacity */
+    /* Border Colors */
+    --border-color: rgba(213, 149, 255, 0.5);
+    /* Standard border */
+    --border-color-35: rgba(213, 149, 255, 0.35);
+    /* Lighter border */
+    --border-color-60: rgba(213, 149, 255, 0.6);
+    /* Hover border */
+    /* Blur Effects */
+    --blur-small: blur(10px);
+    /* Small blur for subtle effects */
+    --blur-medium: blur(15px);
+    /* Medium blur for cards */
+    --blur-large: blur(20px);
+    /* Large blur for sidebars */
+    /* Additional Colors */
+    --dark-purple: rgba(101, 71, 120, 0.55);
+    /* Darker purple for blocks */
+    --dark-blue-title: #608cd8;
+    /* Title text color */
+    --dark-purple-blocks: rgba(118, 74, 146, 0.6);
+    /* Code block background */
+    --text-color: rgb(157, 90, 178);
+    /* Primary text color */
+    --transparent-bg: transparent;
+    /* Transparent background */
+}
+
+/* === General Layout === */
+body[data-ds-dark-theme] {
+    background: linear-gradient(to top, rgba(48, 35, 90, .77), rgba(75, 33, 127, .8)), url("") center/cover no-repeat;
+    height: 100vh;
+
+    /* Override DeepSeek variables for transparency */
+    --dsr-bg: var(--transparent-bg);
+    --dsr-input-bg: var(--transparent-bg);
+    --dsr-side-bg: var(--transparent-bg);
+    --dsw-alias-bg-base: var(--transparent-bg) !important;
+    --dsw-alias-button-primary-hover: var(--main-color-70);
+    --dsw-static-neutral-bluish-900: transparent !important;
+    --dsw-alias-brand-primary: rgb(157, 90, 178);
+}
+
+/* Gradient overlay for theme container */
+body[data-ds-dark-theme] .ds-theme > div {
+    background: linear-gradient(0deg, #0008, var(--transparent-bg));
+}
+
+/* === Chat and Card Elements === */
+body[data-ds-dark-theme] .fbb737a4,
+body[data-ds-dark-theme] .dd442025 {
+    background: var(--main-color-35);
+    backdrop-filter: var(--blur-medium);
+    border: 2px solid var(--border-color);
+}
+
+/* === Code Blocks === */
+.md-code-block {
+    --ds-md-code-banner-background-color: var(--dark-purple-blocks);
+}
+
+.md-code-block > pre {
+    background: var(--main-color-15);
+    border: 2px solid var(--dark-purple-blocks);
+    backdrop-filter: var(--blur-small);
+    border-radius: 0 0 14px 14px;
+}
+
+/* === Scrollbars === */
+.ds-scroll-area__gutters .ds-scroll-area__horizontal-bar,
+.ds-scroll-area__gutters .ds-scroll-area__vertical-bar {
+    background-color: transparent !important;
+}
+
+/* === Miscellaneous Elements === */
+.e5bf614e {
+    background: var(--main-color-35);
+    backdrop-filter: var(--blur-small);
+    border: 2px solid var(--border-color);
+}
+
+.b8812f16 {
+    background: var(--dark-purple);
+    backdrop-filter: var(--blur-large);
+    border: 0 solid var(--border-color);
+}
+
+._48cdfc1 {
+    color: var(--text-color) !important;
+    background: var(--transparent-bg);
+}
+
+._5a8ac7a {
+    background: var(--main-color-70);
+    backdrop-filter: var(--blur-small);
+    border: 2px solid #635278bd;
+}
+
+._546d736.b64fb9ae {
+    background: var(--main-color-35);
+    backdrop-filter: var(--blur-small);
+}
+
+._546d736 ._254829d {
+    background: var(--transparent-bg) !important;
+}
+
+/* === Input Area === */
+.ds-markdown {
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    background: var(--main-color-35);
+    backdrop-filter: var(--blur-medium);
+}
+
+.ds-markdown h1,
+.ds-markdown h2 {
+    color: var(--dark-blue-title);
+    font-family: "SF Pro Text", sans-serif;
+}
+
+/* === Input Buttons (DeepThink, Search) === */
+._70150b8 {
+    border: 2px solid var(--border-color-35);
+    background: var(--main-color-15);
+}
+
+._70150b8:hover {
+    border: 2px solid var(--border-color);
+    background: var(--main-color-50);
+}
+
+/* === Sidebar === */
+.dc04ec1d {
+    --local-sider-width: 350px;
+    /* Custom sidebar width */
+}
+
+._2be88ba {
+    background-color: var(--transparent-bg) !important;
+}
+
+.f8d1e4c0 {
+    display: none;
+    /* Hide unnecessary sidebar elements */
+}
+
+.fbb737a4 {
+    max-height: 240px;
+    overflow-y: scroll;
+}
+
+._0fcaa63 {
+    color: var(--transparent-bg) !important;
+}
+
+._77cefa5,
+._76cd190,
+._090c426._00d3b42,
+._090c426._6894dc3 {
+    border: 2px solid var(--border-color);
+    background: var(--main-color-35);
+    backdrop-filter: var(--blur-small);
+}
+
+._090c426._00d3b42:hover,
+._090c426._6894dc3:hover {
+    border: 2px solid var(--border-color-60);
+    background: var(--main-color-60);
+    backdrop-filter: var(--blur-small);
+}
+
+._7436101 {
+    border: 2px solid var(--border-color);
+    background: var(--main-color-35);
+    backdrop-filter: var(--blur-medium);
+}
+}
