@@ -1,10 +1,9 @@
 /* ==UserStyle==
-@name           Deepseek-Matugen
-@namespace      github.com/NullCipherr/DeepSeek/Deepseek-Matugen
+@name           DeepSeek Dark Purple Glassmorphism
+@namespace      github.com/WWKKX2/DeepSeek-Dark-Purple-Glassmorphism-Stylus
 @version        0.0.1
-@description    A minimal, purple-themed UserStyle for DeepSeek chat, inspired by glassmorphism and liquid glass aesthetics, featuring an 8-bit animated GIF background for a retro vibe.
 @author         NullCipherr
-@homepageURL    https://github.com/NullCipherr/DeepSeek/Deepseek-Matugen
+@homepageURL    github.com/WWKKX2/DeepSeek-Dark-Purple-Glassmorphism-Stylus
 @license        MIT
 @preprocessor   stylus
 ==/UserStyle== */
@@ -54,7 +53,7 @@
 
 /* === General Layout === */
 body[data-ds-dark-theme] {
-    background: linear-gradient(to top, rgba(48, 35, 90, .77), rgba(75, 33, 127, .8)), url("") center/cover no-repeat;
+    background: linear-gradient(to top, rgb(33, 24, 62), rgb(52, 23, 88)), url("") center/cover no-repeat;
     height: 100vh;
 
     /* Override DeepSeek variables for transparency */
@@ -92,10 +91,12 @@ body[data-ds-dark-theme] .dd442025 {
     border-radius: 0 0 14px 14px;
 }
 
+
 /* === Scrollbars === */
 .ds-scroll-area__gutters .ds-scroll-area__horizontal-bar,
 .ds-scroll-area__gutters .ds-scroll-area__vertical-bar {
-    background-color: transparent !important;
+    display: none !important;
+    background-color: rgba(43, 22, 79, .79) !important;
 }
 
 /* === Miscellaneous Elements === */
@@ -201,5 +202,18 @@ body[data-ds-dark-theme] .dd442025 {
     border: 2px solid var(--border-color);
     background: var(--main-color-35);
     backdrop-filter: var(--blur-medium);
+}
+
+/* === 让 fbb737a4 滚动条消失 === */
+/* 隐藏滚动条 - WebKit 浏览器 (Chrome/Edge/Safari) */
+.fbb737a4::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* 隐藏滚动条 - Firefox */
+.fbb737a4 {
+    scrollbar-width: none !important;
 }
 }
